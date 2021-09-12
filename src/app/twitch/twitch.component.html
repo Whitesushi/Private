@@ -1,0 +1,8 @@
+<input class="form-control" [(ngModel)]="filter" (change)="filterData()">
+<div *ngIf="streams">
+  <button mat-raised-button color="primary" (click)="prevPage(filteredStreams.pagination.cursor)">Previous Page</button>
+  <button mat-raised-button color="primary" (click)="nextPage(filteredStreams.pagination.cursor)">Next Page</button>
+  <div *ngFor="let stream of filteredStreams.data">
+    <span class="badge badge-secondary">{{stream.viewer_count}}</span>{{stream.title}}
+  </div>
+</div>
