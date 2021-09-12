@@ -15,12 +15,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { TwitchComponent } from './twitch/twitch.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReincarnationComponent } from './reincarnation/reincarnation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    TwitchComponent
+    TwitchComponent,
+    ReincarnationComponent
   ],
   imports: [
     BrowserModule,
