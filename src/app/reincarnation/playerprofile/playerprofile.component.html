@@ -1,0 +1,36 @@
+
+<button mat-button (click)="goBack()">Back</button>
+<div *ngIf="playerItems">
+
+  <div class="row">
+    <div class="col-4" *ngFor="let character of playerItems">
+
+      <table class="table" style="color: white;">
+        <thead>
+          <tr>
+            <th>Icon</th>
+            <th>ReID</th>
+            <th>Type</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item of character">
+            <td>
+              <div style="width: 50px; height: 50px; background-position: center; background-image: url('https://kobe42.pythonanywhere.com/{{item.img}}');"></div>
+            </td>
+            <td>{{item.ReID}}</td>
+            <td><span class="badge badge-primary">{{item.equipmentType}}</span></td>
+            <td>{{item.npc_custom_key}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+
+
+    </div>
+  </div>
+
+
+</div>

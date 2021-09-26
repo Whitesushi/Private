@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "whitesushi-f06b7": {
+      "hosting": {
+        "Private": [
+          "whitesushi-f06b7"
+        ]
+      }
+    }
+  }
+}

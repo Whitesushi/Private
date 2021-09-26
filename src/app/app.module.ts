@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,13 +20,26 @@ import { TwitchComponent } from './twitch/twitch.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ReincarnationComponent } from './reincarnation/reincarnation.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { PlayerprofileComponent } from './reincarnation/playerprofile/playerprofile.component';
+import { MatCardModule } from '@angular/material/card';
+import { LostlandraidersComponent } from './lostlandraiders/lostlandraiders.component';
+import { LoadoutnewComponent } from './lostlandraiders/loadoutnew/loadoutnew.component';
+import { LoadoutlistComponent } from './lostlandraiders/loadoutlist/loadoutlist.component';
+import { LoadoutviewComponent } from './lostlandraiders/loadoutview/loadoutview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     TwitchComponent,
-    ReincarnationComponent
+    ReincarnationComponent,
+    PlayerprofileComponent,
+    LostlandraidersComponent,
+    LoadoutnewComponent,
+    LoadoutlistComponent,
+    LoadoutviewComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +53,12 @@ import { ReincarnationComponent } from './reincarnation/reincarnation.component'
     MatListModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatGridListModule,
+    MatTooltipModule,
+    MatCardModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

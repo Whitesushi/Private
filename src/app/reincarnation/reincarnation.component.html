@@ -1,1 +1,17 @@
-<p>reincarnation works!</p>
+<div>
+  <button mat-raised-button (click)="filter()">Sort</button>
+
+  <h1>{{dungeon_name}}</h1>
+
+  <div style="display: flex; flex-direction: column; flex-wrap: wrap; max-height: 800px;">
+      <div *ngFor="let result of results; let i = index;" style="margin-right: 10px;">
+          {{i+1}}.
+          <span class="badge badge-secondary">Time: {{result.Time/60|number}} mins</span>
+          <span class="badge badge-secondary" *ngFor="let player of result.players" matTooltip={{player.tag}} routerLink="../reincarnationprofile/{{player.tag}}">{{player.hero | titlecase}}</span>
+          <span class="badge badge-secondary" *ngIf="result.dungeon">{{result.dungeon}}</span>
+          <!-- <a href="http://reincarnationrpg.com/user/{{result.Tag}}"><span class="badge badge-primary">build</span></a> -->
+        </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,27 @@
+<button mat-button (click)="back()">Back</button>
+<button mat-button (click)="submit()">Submit</button>
+
+<div style="display: flex; flex-wrap: wrap;">
+  <input class="form-control" [(ngModel)]="loadout.name" placeholder="Please enter a name for your loadout" style="margin-top: 1rem; margin-bottom: 1rem; margin-right: 3%; width: 60%">
+  <input class="form-control" [(ngModel)]="loadout.submitted" placeholder="Please enter your name" style="margin-top: 1rem; margin-bottom: 1rem; margin-right: 3%; width: 24%;">
+  <input class="form-control" type="number" [(ngModel)]="loadout.abyss" placeholder="Abyss" style="margin-top: 1rem; margin-bottom: 1rem; width: 10%;">
+</div>
+
+<!-- <div *ngFor="let hero of (loadout.heroes)"> {{hero}}</div> -->
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; max-width: 100%; justify-content: center;">
+
+  <mat-card *ngFor="let hero of heroes" (click)="toggleSelect(hero)"
+  style="border-width: 2px; border-style: solid; margin: 5px; max-width: 249px;"
+  [ngStyle]="styleHero(hero)">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <h1><span class="badge badge-primary" style="background-color: darkcyan;">{{hero.rarity}}</span></h1>
+    </div>
+    <mat-card-title>{{hero.name}}</mat-card-title>
+    <mat-card-subtitle>Placeholder for card type</mat-card-subtitle>
+  </mat-card-header>
+
+  </mat-card>
+
+</div>

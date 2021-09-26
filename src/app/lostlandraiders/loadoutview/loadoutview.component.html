@@ -1,0 +1,30 @@
+<button mat-button (click)="back()">Back</button>
+
+<div *ngIf="loadout" style="margin-top: 1rem;">
+  {{loadout.name}}
+
+  <div style="display: flex; flex-wrap: wrap;">
+
+    <img *ngFor="let hero of heroes" src="{{hero.image}}">
+
+    <mat-card *ngFor="let hero of heroes" style="max-width: 400px; margin: 1rem;">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <h1><span class="badge badge-primary" style="background-color: darkcyan;">{{hero.rarity}}</span></h1>
+        </div>
+        <mat-card-title>{{hero.name}}</mat-card-title>
+        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+      </mat-card-header>
+      <img mat-card-image src="{{hero.image}}">
+      <!-- <mat-card-content>
+
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions> -->
+    </mat-card>
+
+  </div>
+</div>

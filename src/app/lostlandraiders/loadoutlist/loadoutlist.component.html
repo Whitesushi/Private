@@ -1,0 +1,29 @@
+<div style="display: flex; flex-direction: column; flex-wrap: wrap;">
+
+  <div *ngFor="let loadout of loadouts">
+    <mat-card style="max-width: 400px; margin-bottom: 1rem;">
+      <mat-card-header>
+        <div mat-card-avatar>
+          <h1><span class="badge badge-primary" style="background-color: darkcyan;">{{loadout.cost}}</span></h1>
+        </div>
+        <mat-card-title>{{loadout.name}}</mat-card-title>
+        <mat-card-subtitle>{{loadout.submitted}} - Abyss: {{loadout.abyss}}</mat-card-subtitle>
+      </mat-card-header>
+      <!-- <img mat-card-image> -->
+      <mat-card-content>
+
+        <div style="display: flex; flex-direction: column; flex-wrap: wrap; max-height: 300px;">
+          <div *ngFor="let hero of loadout.heroes"><span class="badge badge-primary" [ngStyle]="rarityStyle(hero)" style="margin-right: 5px;">{{hero.rarity}}</span>{{hero.name}}</div>
+        </div>
+
+      </mat-card-content>
+      <mat-card-actions style="display: flex; justify-content: center;">
+        <!-- <button mat-button>LIKE</button>
+        <button mat-button>DISLIKE</button> -->
+        <!-- <button mat-button routerLink="./../lostland-loadout-view/{{loadout.id}}">VIEW</button> -->
+        <button mat-button (click)="deleteLoadout(loadout)">DELETE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</div>
